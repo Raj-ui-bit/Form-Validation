@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <script>
+        function data() {
+            var a = document.getElementById("n1").value
+            var b = document.getElementById("n2").value
+            var c = document.getElementById("n3").value
+            var d = document.getElementById("n4").value
+            if (a == "" || b == "" || c == "" || d == "") {
+                alert("All Fields is mendatory");
+                return false;
+            } else if (b.length < 10 || b.length > 10) {
+                alert("Number should be of 10 Digits ! Please enter valid Number");
+                return false;
+            }
+            else if (isNaN(b)) {
+                alert("Only numbers are allowed ! Please enter valid number");
+                return false;
+            }
+            else if (c != d) {
+                alert("Please Enter same password");
+                return false;
+            }
+            else {
+                true;
+            }
+        }
+    </script>
+    <h1>FORM VALIDATION</h1>
+    <center>
+        <form onsubmit="return data()" action="index.html">
+            <div>
+                <label for="">UserId :</label>
+                <input type="text" id="n1">
+            </div><br>
+            <div>
+                <label for="">Contact :</label>
+                <input type="text" id="n2">
+            </div><br>
+            <div>
+                <label for="">Password :</label>
+                <input type="password" id="n3">
+            </div><br>
+            <div>
+                <label for="">Confirm Password :</label>
+                <input type="password" id="n4">
+            </div><br><br>
+            <div>
+                <input type="submit" value="Submit Your Data">
+            </div>
+        </form>
+    </center>
+</body>
+
+</html>
